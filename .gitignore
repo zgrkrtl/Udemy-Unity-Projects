@@ -70,3 +70,17 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Mark4/Assets/Standard Assets/Environment/SpeedTree/Palm.meta
+Mark4/Assets/Standard Assets/Environment/SpeedTree/Palm/Palm_Desktop Materials.meta
+
+*.meta
+*.mat
+*.png
+*.prefab
+*.tga
+*.fbx
+*.shader
+*.meta
+*.psd
+*.jpg
+*.spm
