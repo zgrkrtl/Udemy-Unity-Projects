@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class Controller : MonoBehaviour
 {
-    [SerializeField] GameObject[] lasers;
-    [SerializeField] float speed = 50f;
-    [SerializeField] float rangeX = 12f;
+    [Header("General Settings")]
+    [Tooltip("lasers that to shoot")][SerializeField] GameObject[] lasers;
+    [Tooltip("How fast ship goes up and down")][SerializeField] float speed = 50f;
+    [Tooltip("")][SerializeField] float rangeX = 12f;
     [SerializeField] float rangeY = 10f;
 
     [SerializeField] float positionPicthFactor = -2f;
@@ -18,6 +19,8 @@ public class Controller : MonoBehaviour
 
     float horizontalThrow;
     float verticalThrow;
+
+
     void Update()
     {
         ProcessTranslation();
@@ -57,29 +60,24 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
-            ActivateLasers();
+            SetLasers(true);
         }
         else
         {
-            deActivateLasers();
+            SetLasers(false);
         }
 
 
     }
 
-    private void deActivateLasers()
+    private void SetLasers(bool state)
     {
         foreach (GameObject laser in lasers)
         {
-            laser.SetActive(false);
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = state;
         }
     }
 
-    private void ActivateLasers()
-    {
-        foreach (GameObject laser in lasers)
-        {
-            laser.SetActive(true);
-        }
-    }
+
 }
