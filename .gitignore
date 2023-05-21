@@ -104,3 +104,8 @@ Mark4/Assets/Standard Assets/Environment/SpeedTree/Palm/Palm_Desktop Materials.m
 *.hlsl
 *.wlt
 *.cginc
+*.otf
+*.ttf
+*.mtl
+*.obj
+*.ttf
